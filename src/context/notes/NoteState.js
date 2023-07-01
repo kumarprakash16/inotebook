@@ -22,7 +22,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "649c10bff7fb5037e6c9d718",
+      _id: "649c10bff7fb5037e6c9d730",
       user: "649aa71ac4d67e54d8235afe",
       title: "My Title",
       description: "Please wake me up.",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "649c10bff7fb5037e6c9d718",
+      _id: "649c10bff7fb5037e6c9d728",
       user: "649aa71ac4d67e54d8235afe",
       title: "My Title",
       description: "Please wake me up.",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "649c10bff7fb5037e6c9d718",
+      _id: "649c10bff7fb5037e6c9d729",
       user: "649aa71ac4d67e54d8235afe",
       title: "My Title",
       description: "Please wake me up.",
@@ -52,8 +52,35 @@ const NoteState = (props) => {
 
   const [notes, setNotes] = useState(notesInitial);
 
+  // Add a note
+  const addNote = (title, description, tag)=>{
+    // To API Call
+    const note = {
+      _id: "649c10bff7fb5037e6c9d729",
+      user: "649aa71ac4d67e54d8235afe",
+      title: title,
+      description: description,
+      tag: tag,
+      date: "2023-06-28T10:51:43.477Z",
+      __v: 0,
+    }
+      setNotes(notes.concat(note));
+  }
+
+  // Delete a node
+  const deleteNote = ()=>{
+
+  }
+
+  // Edit a node
+  const editNote =()=>{
+
+  }
+
+
+
   return (
-    <NoteContext.Provider value={{notes, setNotes}}>{props.children}</NoteContext.Provider>
+    <NoteContext.Provider value={{notes, addNote, deleteNote, editNote}}>{props.children}</NoteContext.Provider>
   );
 };
 
