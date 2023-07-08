@@ -7,7 +7,7 @@ export const Home = (props) => {
 
   return (
     <div>
-      <Notes showALert={props.showAlert}/>
+      <Notes showAlert={props.showAlert}/>
     </div>
   );
 };
