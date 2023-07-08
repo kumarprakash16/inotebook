@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import { useHistory} from 'react-router-dom'
-export const Signup = () => {
+import { useHistory} from 'react-router-dom';
+
+export const Signup = (props) => {
   const [credentials, setCredentials] = useState({ name:"" ,email:"", password:"", cpassword:""})
   let history = useHistory();
 
@@ -22,9 +23,10 @@ export const Signup = () => {
       // save the auth token and redirect
       localStorage.setItem('token', json.authtoken); 
       history.push("/");
+      props.showAlert("Account Created Successfully","success");
     }
     else{
-      alert("invalid credentials")
+      props.showAlert("Invalid Credentials","danger");
     } 
   }
 
